@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     {{name}}
-    <!-- <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -80,27 +80,19 @@
           awesome-vue
         </a>
       </li>
-    </ul> -->
+    </ul>
   </div>
 </template>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-// export default {
-//   name: 'HelloWorld',
-//   data () {
-//     return {
-//       msg: 'Welcome to Your Vue.js App'
-//     }
-//   }
-// }
-
-new Vue({
-  el:'#app',
-  data:{
-    name:'dongpeng',
-    age:13
+export default {
+  name: 'HelloWorld',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
   }
-});
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

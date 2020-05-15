@@ -1,13 +1,29 @@
-<template>
-  <div id="app">
+<!-- <template>
+   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
+  </div> 
+</template> -->
+
+<!-- <script>
+export default {
+  name: 'App'
+}
+</script> -->
+
+<template>
+  <div id="app">
+    <d-p></d-p>
   </div>
 </template>
 
 <script>
+import aa from './components/Demo1'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'd-p': aa
+  }
 }
 </script>
 
