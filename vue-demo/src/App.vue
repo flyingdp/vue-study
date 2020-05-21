@@ -2,7 +2,7 @@
    <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
-  </div> 
+  </div>
 </template> -->
 
 <!-- <script>
@@ -13,18 +13,33 @@ export default {
 
 <template>
   <div id="app">
-    <d-p></d-p>
+<!--    <d-p></d-p>-->
+<!--    <MyHeader></MyHeader>-->
+<!--    <sub-app :myName="name" :ffn="changeName"></sub-app> &lt;!&ndash;给子组件赋值 调子组件方法&ndash;&gt;-->
+    <sub-app :myName="name" @newName="name=$event"></sub-app>
   </div>
 </template>
 
 <script>
-import aa from './components/Demo1'
-export default {
-  name: 'App',
-  components: {
-    'd-p': aa
+  /*本地注册组件*/
+  import aa from './components/Demo1'
+  import sub1 from './components/Sub1'
+  export default {
+    data(){
+      return{
+        name:'flying'
+      }
+    },
+    methods:{
+      changeName:function(name) {
+        this.name = name
+      }
+    },
+    components: {
+      // 'd-p': aa
+      subApp:sub1
+    }
   }
-}
 </script>
 
 <style>
