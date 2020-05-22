@@ -3,6 +3,9 @@ import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 import Login from '../views/Login'
 import Home from "../views/Home";
+import productInfo from "../views/productInfo";
+import productList from '../views/ProductList'
+
 Vue.use(Router)
 Vue.use(Login)
 Vue.use(Home)
@@ -14,9 +17,24 @@ export default new Router({
       component: Login
     },
     {
+      path: '/logout',
+      name: 'logout',
+      redirect: '/login'
+    },
+    {
       path: '/home',
-      // name: 'Home',
-      component: Home
+      component: Home,
+      children:[
+        {
+          path: '/productList',
+          component: productList
+        },
+        {
+          path: '/productInfo/:id',
+          name:'productInfo',
+          component: productInfo
+        }
+      ]
     }
   ]
 })
