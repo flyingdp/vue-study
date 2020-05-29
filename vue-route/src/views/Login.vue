@@ -43,7 +43,11 @@
       // 表单验证，需要在 el-form-item 元素中增加 prop 属性
         rules: {
           username: [
-            {required: true, message: '账号不可为空', trigger: 'blur'}
+            {
+              required: true,
+              message: '账号不可为空',
+              trigger: 'blur'
+            }
           ],
           password: [
             {required: true, message: '密码不可为空', trigger: 'blur'}
@@ -60,7 +64,7 @@
           var vm = this;
           if (valid) {
             this.axios({
-              method:'get',
+              method:'post',
               url:'http://localhost:8082/bd/login?username='+vm.form.username+'&password='+vm.form.password
               // data:{
               //   username:this.form.username,

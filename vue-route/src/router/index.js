@@ -19,6 +19,7 @@ export default new Router({
     {
       path: '/logout',
       name: 'logout',
+      //重定向
       redirect: '/login'
     },
     {
